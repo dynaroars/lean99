@@ -69,7 +69,8 @@
 * [56: Symmetric binary tree](./build/Problem56.md)
 * [57: Binary search tree](./build/Problem57.md)
 * [58: List up symmetric balanced binary trees](./build/Problem58.md)
-* [59: List up balanced binary trees with given hight](./build/Problem59.md)* [60: Construct height-balanced binary trees with a given number of nodes](./build/Problem60.md)
+* [59: List up balanced binary trees with given hight](./build/Problem59.md)
+* [60: Construct height-balanced binary trees with a given number of nodes](./build/Problem60.md)
 
 # 61-69: Binary trees, continued
 
