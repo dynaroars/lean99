@@ -11,6 +11,7 @@ def myButLast (l : List α) : Option α :=
   | [_] => none
   | [x,_] => some x
   | _ :: xs => myButLast xs
+  -- sorry
 
 -- The following codes are for test and you should not edit these.
 

@@ -4,9 +4,11 @@
 -/
 variable {α : Type}
 
-def elementAt: List α -> Nat -> Option α
-  | x :: _,1 => some x
-  | _ :: xs, n+1 => elementAt xs n
+def elementAt (l : List α) (k : Nat) : Option α :=
+  -- sorry
+  match l, k with
+  | x :: _, 1 => some x
+  | _ :: xs, n + 1 => elementAt xs n
   | _, _ => none
   -- sorry
 

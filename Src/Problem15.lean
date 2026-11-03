@@ -14,6 +14,7 @@ def repli (l : List α) (n : Nat) : List α :=
   match l with
   | [] => []
   | a :: b => (solerep a n) ++ repli b n
+  -- sorry
 
 -- The following codes are for test and you should not edit these.
 
