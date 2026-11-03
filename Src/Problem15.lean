@@ -5,17 +5,15 @@
 
 variable {α : Type}
 
+def solerep: α -> (n : Nat) -> List α
+  | _, 0 => []
+  | x, m + 1 => x :: solerep x m
+
 def repli (l : List α) (n : Nat) : List α :=
   -- sorry
   match l with
   | [] => []
-  | a :: b => (solorepl a n) ++ repli b n
-where
-  solorepl (x : α) (n : Nat) : List α :=
-    match n with
-    | 0 => []
-    | m + 1 => x :: solorepl x m
-  -- sorry
+  | a :: b => (solerep a n) ++ repli b n
 
 -- The following codes are for test and you should not edit these.
 

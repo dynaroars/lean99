@@ -14,9 +14,10 @@ variable [BEq α]
 #check List.reverse
 
 def isPalindrome (l : List α) : Bool :=
-  -- sorry
   l == l.reverse
-  -- sorry
+
+
+
 
 -- The following codes are for test and you should not edit these.
 

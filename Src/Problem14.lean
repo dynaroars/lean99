@@ -5,12 +5,10 @@
 
 variable {α : Type}
 
-def dupli (l : List α) : List α :=
-  -- sorry
-  match l with
+def dupli: List α -> List α
   | [] => []
-  | a :: b => a :: a :: dupli b
-  -- sorry
+  | a :: as => a :: (a :: dupli as)
+
 
 -- The following codes are for test and you should not edit these.
 

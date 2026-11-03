@@ -4,21 +4,17 @@
 -/
 variable {α : Type} [BEq α]
 
-def compress (l : List α) : List α :=
-  -- sorry
-  match l with
+def comp: α -> List α -> List α
+  | _, [] => []
+  | x, a :: as =>
+    if x == a then
+      comp a as
+    else
+      a :: comp a as
+
+def compress:  List α -> List α
   | [] => []
-  | a :: b => a :: comp' b a
-where
-  comp' (ls : List α) (x : α) : List α :=
-    match ls with
-    | [] => []
-    | a' :: l' =>
-      if a' == x then
-        comp' l' a'
-      else
-        a' :: comp' l' a'
-  -- sorry
+  | a :: xs => a :: comp a xs
 
 -- The following codes are for test and you should not edit these.
 

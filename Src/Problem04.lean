@@ -4,12 +4,10 @@
 -/
 variable {α : Type}
 
-def myLength (l : List α) : Nat :=
-  -- sorry
-  match l with
+def myLength: List α -> Nat
   | [] => 0
   | _ :: a => myLength a + 1
-  -- sorry
+
 
 -- The following codes are for test and you should not edit these.
 

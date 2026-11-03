@@ -6,14 +6,11 @@ variable {α : Type}
 
 def myButLast (l : List α) : Option α :=
   -- sorry
-  if l.length < 2 then
-    -- `l` の長さが2未満のときでも `i` は定義できてしまうので，
-    -- この if 式が必要
-    none
-  else
-    let i := l.length - 2;
-    l[i]?
-  -- sorry
+  match l with
+  | [] => none
+  | [_] => none
+  | [x,_] => some x
+  | _ :: xs => myButLast xs
 
 -- The following codes are for test and you should not edit these.
 

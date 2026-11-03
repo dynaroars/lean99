@@ -4,12 +4,10 @@
 -/
 variable {α : Type}
 
-def myReverse (l : List α) : List α :=
-  -- sorry
-  match l with
+def myReverse: List α -> List α
   | [] => []
   | a :: as => myReverse as ++ [a]
-  -- sorry
+
 
 -- The following codes are for test and you should not edit these.
 
