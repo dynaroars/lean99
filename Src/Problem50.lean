@@ -47,10 +47,10 @@ instance : Ord HuffTree where
 def HuffTree.sort (trees : List HuffTree) : List HuffTree := insertionSort trees
 
 --#--
-def String.freq (s : String) (c : Char) := s.data.filter (· == c) |>.length
+def String.freq (s : String) (c : Char) := s.toList.filter (· == c) |>.length
 
 def String.toLeaves (s : String) : List HuffTree :=
-  let allChars : List Char := s.data.eraseDups
+  let allChars : List Char := s.toList.eraseDups
   allChars.map fun c => HuffTree.Leaf c (s.freq c)
 
 partial def HuffTree.merge (trees : List HuffTree) : List HuffTree :=

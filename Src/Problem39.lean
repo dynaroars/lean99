@@ -5,7 +5,7 @@
 
 /-- eratosthenes sieve -/
 def eratosthenes (n : Nat) : Array Bool := Id.run do
-  let mut isPrime := Array.mkArray (n + 1) true
+  let mut isPrime := Array.replicate (n + 1) true
 
   isPrime := isPrime.set! 0 false
   isPrime := isPrime.set! 1 false
@@ -28,9 +28,9 @@ def eratosthenes (n : Nat) : Array Bool := Id.run do
 /-- Returns a list of prime numbers less than or equal to n given -/
 def primeSieve (n : Nat) : List Nat :=
   let result := eratosthenes n
-  result.toList.enum
-    |> List.filter (fun (_i, e) => e)
-    |> List.map (fun (i, _e) => i)
+  result.toList.zipIdx
+    |> List.filter (fun (e, _i) => e)
+    |> List.map (fun (_e, i) => i)
 --#--
 
 def primesR (s t : Nat) : List Nat :=

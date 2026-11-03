@@ -38,7 +38,7 @@ where
       return (none, [])
 
     let index ← IO.rand 0 (univ.length - 1)
-    let element := univ.get! index
+    let element := univ[index]!
     let rest := univ.take index ++ univ.drop (index + 1)
     return (element, rest)
   -- sorry

@@ -42,13 +42,10 @@ def empty : NestedList String := list []
 #eval empty
 
 example : flatten (.elem 5) = [5] := by
-  delta flatten
-  rfl
+  simp [flatten]
 
 example : flatten sample = [1, 2, 3, 4] := by
-  delta flatten
-  rfl
+  simp [flatten, sample]
 
 example : flatten (empty) = [] := by
-  delta flatten
-  rfl
+  simp [flatten, empty]

@@ -13,8 +13,9 @@ lean_lib «Src» where
   globs := #[.submodules `Src]
   -- add library configuration options here
 
-require «mk-exercise» from git
-  "https://github.com/Seasawher/mk-exercise" @ "lean/v4.10.0"
+/-- Generates exercise files by replacing `-- sorry` blocks with `sorry`. -/
+lean_exe mk_exercise where
+  root := `Scripts.MkExercise
 
 require mdgen from git
   "https://github.com/Seasawher/mdgen" @ "main"

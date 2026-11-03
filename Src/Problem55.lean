@@ -31,7 +31,7 @@ namespace ListMonad
 /-- monad instance of `List` -/
 scoped instance : Monad List where
   pure := List.singleton
-  bind := List.flatMap
+  bind xs f := xs.flatMap f
   map := List.map
 
 end ListMonad

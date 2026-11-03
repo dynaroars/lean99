@@ -4,7 +4,7 @@
 -/
 
 def Nat.isPrime (n : Nat) : Bool := Id.run do
-  if n ≤ 2 then
+  if n < 2 then
     return false
   for d in [2:n] do
     if n % d = 0 then

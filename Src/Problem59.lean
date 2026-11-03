@@ -24,7 +24,7 @@ namespace ListMonad
 /-- monad instance of `List` -/
 scoped instance : Monad List where
   pure := List.singleton
-  bind := List.flatMap
+  bind xs f := xs.flatMap f
   map := List.map
 
 end ListMonad
@@ -62,11 +62,12 @@ def hbalTrees (height : Nat) : List (BinTree Unit) :=
   | h + 2 =>
     let t1s := hbalTrees (h + 1)
     let t2s := hbalTrees h
-    let ts := List.product t1s t2s ++ List.product t2s t1s
+    let ts := List.product t1s t2s ++ List.product t1s t1s ++ List.product t2s t1s
     ts.map fun (t1, t2) => BinTree.node () t1 t2
   -- sorry
 
 -- The following codes are for test and you should not edit these.
 
-#guard (hbalTrees 2 |>.length) = 2
-#guard (hbalTrees 3 |>.length) = 4
+#guard (hbalTrees 2 |>.length) = 3
+#guard (hbalTrees 3 |>.length) = 15
+#guard (hbalTrees 4 |>.length) = 315
