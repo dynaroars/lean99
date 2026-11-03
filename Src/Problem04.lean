@@ -5,9 +5,10 @@
 variable {α : Type}
 
 def myLength: List α -> Nat
+  -- sorry
   | [] => 0
   | _ :: a => myLength a + 1
-
+  -- sorry
 
 -- The following codes are for test and you should not edit these.
 
